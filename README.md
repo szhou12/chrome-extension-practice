@@ -7,6 +7,7 @@ project-folder/
 ├── extension/
 │   ├── background.js
 │   ├── content.js
+│   ├── content.js.map
 │   ├── icons/
 │   │   ├── icon16.png
 │   │   ├── icon32.png
@@ -17,17 +18,18 @@ project-folder/
 │   │   └── popup.js
 │   └── manifest.json
 ├── src/
-│   └── // source files for the extension
-├── webpack.config.js
-├── babel.config.js
+│   └── index.js // source files for the extension
+├── .babelrc // babel.config.js
 ├── package.json
+├── package-lock.json
+├── webpack.config.js
 └── node_modules/
     └── // dependencies installed by npm
 
 ```
 
 # Getting Started
-## Stage 1
+## Stage 1 - Set Up Boilerplate
 ```
 project-folder/
 ├── extension/
@@ -44,7 +46,7 @@ project-folder/
 * `webpack.config.js`: configuration file for Webpack. When Webpack processes your application, it internally builds a dependency graph that maps every module your project needs and generates one or more bundles. (转写！) In this project, whatever code you edit in `src/index.js` will be compiled by Webpack and injected to `extension/content.js`.
 * In terminal, run `npm install`
     * STEP 1. Check `package.json` -> STEP 2. Consult/Create `package-lock.json` -> STEP 3. Create/Update `node_modules` & Install dependencies into this folder.
-* In terminal, run `npm run build-dev`
+* In terminal, **run `npm run build-dev`**
     * Execute a custom script defined in a project's `package.json` file under the `scripts` section
     * Create `content.js` and `content.js.map` in `extension/` folder.
 ```
@@ -61,9 +63,37 @@ project-folder/
 └── node_modules/
 ```
 
+
+## Stage 2 - `manifest.json`
+* Create: `manifest.json`, `icons/` folder with extension icons, `background.js` (empty, not used in this practice), `popup/` folder (currently empty)
+```
+project-folder/
+├── extension/
+│   ├── background.js // empty
+│   ├── content.js
+│   ├── content.js.map
+│   ├── icons/
+│   │   ├── icon16.png
+│   │   ├── icon32.png
+│   │   ├── icon48.png
+│   │   └── icon128.png
+│   ├── popup/ // empty
+│   └── manifest.json
+├── src/
+│   └── index.js
+├── .babelrc
+├── package.json
+├── package-lock.json
+├── webpack.config.js
+└── node_modules/
+```
+
+# Stage 3 - Popup
+
+
 # manifest.json
 * `"background"`: manage state across browser sessions, save info to local storage.
-    * it's running in the back-end of your extension. 
+    * think it as the back-end of your extension. 
     * the javascript file here won't have access to any of tabs or popups.
     * mainly to handle API calls.
 * `"action"`: associate user's actions with anything specified here
