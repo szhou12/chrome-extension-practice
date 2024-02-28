@@ -89,6 +89,28 @@ project-folder/
 ```
 
 # Stage 3 - Popup
+```
+project-folder/
+├── extension/
+│   ├── background.js // empty
+│   ├── content.js
+│   ├── content.js.map
+│   ├── icons/
+│   │   ├── icon16.png
+│   │   ├── icon32.png
+│   │   ├── icon48.png
+│   │   └── icon128.png
+│   ├── popup/
+│   │   ├── popup.html
+│   └── manifest.json
+├── src/
+│   └── index.js
+├── .babelrc
+├── package.json
+├── package-lock.json
+├── webpack.config.js
+└── node_modules/
+```
 
 
 # manifest.json
@@ -98,8 +120,8 @@ project-folder/
     * mainly to handle API calls.
 * `"action"`: associate user's actions with anything specified here
     * `"default_icon"`: meaning there're some behaviors that will be triggered when the user clicks on the icon. Such behaviors can be defined in `"background.js"`
-    * `"permissions": ["tabs", "activeTab"]`: VERY IMPORTANT! Gives the extension the permission to access user's data
-        * `"tabs"`: permission to access user's all open tabs in the browser. (May be audited by the Google Chrome team for the purpose)
+    * `"permissions": ["tabs", "activeTab"]`: VERY IMPORTANT! Gives the extension the permission to access user's data (e.g. tabs that user opened)
+        * `"tabs"`: permission to access user's all open tabs in the browser. (May be audited by the Google Chrome team for the purpose of accessing all tabs)
         * `"activeTab"`: permission to access ONLY the current tab the user is on.
     * `"default_popup"`: specify the HTML file that will be displayed when the user clicks on the icon.
         * This HTML page rendering a popup window stands alone as a mini-application. You can style it with CSS and add javascript to it.
@@ -109,7 +131,7 @@ project-folder/
     * `"js": ["content.js"]` The path to your content script that runs the javascript inside the page (so-called "inject").
     * `"matches": ["..."]`: specify what web pages you want to run the content script on.
         * `["<all_urls>"]`: run on all web pages. NOT a good practice.
-        * `["*://chat.openai.com/*"]`: run the content script ONLY on chatGPT page. * matches whatever goes there.
+        * `["*://chat.openai.com/*"]`: run the content script ONLY on chatGPT page. * matches whatever goes there (通配符).
     * `"run_at": "document_end"`: specify the location where you want your script to be injected.
         * `"document_end"`: standard development practice. If you want your script to access or modify all elements in the page, then inject the script at the end of the document. 就是把`content.js`插入到当前tab展示的网页，插入位置在网页的HTML文档的末尾。相当于，你在"修改"当前的网页的HTML，通过在最后加上一条`content.js`的方式。
 * `"web_accessible_resources"`: specify files within your extension that allow web pages to access (webpage -access-> extension). Here, since we want to display a sub-panel that presents results. This sub-panel is something we want the web page to access.
