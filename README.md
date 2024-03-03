@@ -102,6 +102,7 @@ project-folder/
 │   │   └── icon128.png
 │   ├── popup/
 │   │   ├── popup.html
+│   │   └── popup.js
 │   └── manifest.json
 ├── src/
 │   └── index.js
@@ -111,6 +112,8 @@ project-folder/
 ├── webpack.config.js
 └── node_modules/
 ```
+1. Add CSS to `popup.html`.
+2. 
 
 
 # manifest.json
