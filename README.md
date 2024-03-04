@@ -113,8 +113,24 @@ project-folder/
 └── node_modules/
 ```
 1. Add CSS to `popup.html`.
-2. 
+2. Add Javascript `popup.js`
+    * Add click event to buttons `#btn-prompt`, `#btn-render`. Test it by printing mesaages to console.
 
+# Stage 4 - Chrome API: Sending Message From Popup to Content
+- [Official Document: Message passing](https://developer.chrome.com/docs/extensions/develop/concepts/messaging)
+1. Edit `popup.js`:
+    * Send a message (tab info) to `content.js` when the user clicks on the button using `chrome.tabs.query()` and `chrome.tabs.sendMessage()`.
+2. Edit `index.js`:
+    * Catch the message by using `chrome.runtime.onMessage.addListener()`
+3. Run `npm run watch` in terminal:
+    * Compile the code in `index.js` to reflect the changes in `content.js`.
+    * Note: 
+        1. The initial compilation can take a long time (2~3 mins). Possible reason may be source map generation - `devtool: 'source-map'` specified in `webpack.config.js`.
+        2. `npm run watch` acts as a watcher. It will monitor any future changes made in `index.js` and automatically recompile to `content.js` until exit (`Ctrl + C`).
+        3. For one-time compilation, use `npm run build-dev`.
+4. Test it out!
+    * Open a Chrome tab for chatGPT. Inspect the `Console` tab. Click the button in popup window. Check if the message is printed in the console.
+    * If not, try to reload the extension. If still not working, try to remove/reinstall the extension.
 
 # manifest.json
 * `"background"`: manage state across browser sessions, save info to local storage.
