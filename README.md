@@ -88,7 +88,7 @@ project-folder/
 └── node_modules/
 ```
 
-# Stage 3 - Popup
+## Stage 3 - Popup
 ```
 project-folder/
 ├── extension/
@@ -116,7 +116,7 @@ project-folder/
 2. Add Javascript `popup.js`
     * Add click event to buttons `#btn-prompt`, `#btn-render`. Test it by printing mesaages to console.
 
-# Stage 4 - Chrome API: Sending Message From Popup to Content
+## Stage 4 - Chrome API: Sending Message From Popup to Content
 - [Official Document: Message passing](https://developer.chrome.com/docs/extensions/develop/concepts/messaging)
 1. Edit `popup.js`:
     * Send a message (tab info) to `content.js` when the user clicks on the button using `chrome.tabs.query()` and `chrome.tabs.sendMessage()`.
