@@ -131,6 +131,31 @@ project-folder/
 4. Test it out!
     * Open a Chrome tab for chatGPT. Inspect the `Console` tab. Click the button in popup window. Check if the message is printed in the console.
     * If not, try to reload the extension. If still not working, try to remove/reinstall the extension.
+## Stage 5 - Make await Top-Level and Make Popup.js ECMAScript Module
+1. Edit `popup.js`:
+    * Move `const [currentTab] = await chrome.tabs.query(...)` outside to make it global/top-level.
+    * Note: `await` can only be used inside an `async` function!
+2. Edit `popup.html`:
+    * As we are making `const [currentTab] = await chrome.tabs.query(...)` top-level, we need to add `type="module"` to `<script type="module" src="popup.js"></script>`.
+3. Test it out!
+    * `npm run build-dev` to update any changes.
+    * Refresh the extension and reload the chatGPT page.
+    * Inspect the chatGPT page and see if the message can be printed when clicking the button in the popup window.
+4. Edit `index.js`:
+    * Object-oriented programming!
+## Stage 6 - OOP in `Index.js`
+```
+ChatGPTExtension
+├── Fields
+│   ├── XXX
+│   └── YYY
+└── Methods
+    ├── constructor()
+    ├── handleRequest()
+    └── XXX()
+```
+
+
 
 # manifest.json
 * `"background"`: manage state across browser sessions, save info to local storage.
