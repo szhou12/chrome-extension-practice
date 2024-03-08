@@ -1,0 +1,95 @@
+
+Can you explain to me what this line does: <html lang="en">?
+
+If I omit lang attribute, what would happen?
+
+Can you explain what these 3 lines do? 
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Please help me explain id in this line: <button id="btn-render">Render Prompt</button>. How does it differ from class?
+
+Can you help me learn by explaining: 
+* {
+	box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+  }
+
+Can you explain content, padding, border, and margin to a non-expert?
+
+When do we want to use div to wrap aournd a bunch of elements?
+
+It looks like both class attribute and div tag have this grouping functionality?
+
+What is the difference between px and rem? Why is it recommended to use rem whenever it is possible?
+
+What is the root element's font size for a div?
+
+What does <section> do and how does it differ from <div>?
+
+Must <section> tag be inside <tag> tag?
+
+What does section.buttons {width: 100%;} mean in CSS?
+
+What is the default value in width for section?
+
+If the default width is to occupy the full width, what's the point of setting width:100%?
+
+Suppose in my project, there are two classes in the section tag: header and buttons. Only the "buttons" class is set to width:100%. Can you explain the reason for doing so instead of using default?
+
+Which is the container of buttons? Is it section or the div that wraps section?
+
+So when I set buttons' width to be 100%, is it in terms of immediate container or broader container?
+
+What does each mean for the margin with shorthand property with one/two/three/four values?
+e.g. with 2 values: margin: 0.2rem 0;
+
+Suppose I have a div that looks like:<div id="app">
+        <section class="header">
+            <h1>Beautiful Extension</h1>
+        </section>
+        <section class="buttons">
+            <button id="btn-prompt">Send Prompt</button>
+            <button id="btn-render">Render Prompt</button>
+        </section>
+    </div>
+This div has two sections: header and buttons. How does setting the margin value for header differ from setting padding value for header?
+
+What is the difference between const and var?
+
+What is the difference between getElementById() and querySelector()?
+
+Please explain what each component does in addEventListener(): e.g. btnPrompt.addEventListener("click", () => {
+    console.log("prompting to chatGPT")
+})
+
+
+What is the difference between btnPrompt.addEventListener("click", () => {
+    console.log("prompting to chatGPT")
+}) and btnPrompt.addEventListener("click", (e => {
+    console.log("prompting to chatGPT")
+})?
+
+In javascript, is semicolon a must? When do we want to add it?
+
+In this line of code: const [currentTab] = await chrome.tabs.query({active: true, currentWindow: true}), what does the keyword await is doing?
+
+Can you be more specific on pausing the execution of the async function? What does it mean exactly?
+
+Please explain what type="module" is doing in<script type="module" src="popup.js"></script>
+
+Can you explain to me what the following 3 lines of code are doing?
+const input = document.querySelector("#prompt-textarea")
+input.value = prompt
+document.querySelector("#prompt-textarea~button").click()
+
+I'm interested in this syntax: "#prompt-textarea~button". Can you teach me more similar useful syntax? For example, I want to select an element's child element, what syntax should I use?
+
+Does querySelectorAll() return an array of objects? 
+
+Does querySelector() return only one element?
+
+User
+What's the common way to access each element returned from querySelectorAll()? How do I know which is which?

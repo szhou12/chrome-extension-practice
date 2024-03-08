@@ -1,6 +1,17 @@
 # Project Purpose
 The application aims to self-teaching on the development of chrome extension by following online tutorials
 
+# Table of Contents
+* [Folder Structure](#folder-structure)
+* [Getting Started](#getting-started)
+    * [Stage 1 - Set Up Boilerplate](#stage-1---set-up-boilerplate)
+    * [Stage 2 - `manifest.json`](#stage-2---manifestjson)
+    * [Stage 3 - Popup](#stage-3---popup)
+    * [Stage 4 - Chrome API: Sending Message From Popup to Content](#stage-4---chrome-api-sending-message-from-popup-to-content)
+    * [Stage 5 - Make await Top-Level and Make Popup.js ECMAScript Module](#stage-5---make-await-top-level-and-make-popupjs-ecmascript-module)
+    * [Stage 6 - OOP in `index.js`](#stage-6---oop-in-indexjs)
+* [manifest.json](#manifestjson)
+
 # Folder Structure
 ```
 project-folder/
@@ -142,19 +153,23 @@ project-folder/
     * Refresh the extension and reload the chatGPT page.
     * Inspect the chatGPT page and see if the message can be printed when clicking the button in the popup window.
 4. Edit `index.js`:
-    * Object-oriented programming!
-## Stage 6 - OOP in `Index.js`
+    * Let's have fun in object-oriented programming!
+## Stage 6 - OOP in `index.js`
 ```
 ChatGPTExtension
 ├── Fields
-│   ├── XXX
-│   └── YYY
+│   ├── prompt1
+│   └── prompt2
 └── Methods
     ├── constructor()
-    ├── handleRequest()
-    └── XXX()
+    ├── handleRequest(): receive request from popup, call function promptToChatGPT()
+    └── promptToChatGPT(prompt)
 ```
-
+1. Trick: How to quickly find a web page element?
+    * Move mouse to the element
+    * Right click -> Inspect
+    * Right click on the highlighted HTML code -> Copy -> Copy selector
+2. IMPORTANT UPDATE: automating clicking simulation is prohibited by OpenAI! (as of 2024-03-08)
 
 
 # manifest.json
