@@ -12,6 +12,12 @@ The application aims to self-teaching on the development of chrome extension by 
     * [Stage 6 - OOP in `index.js`](#stage-6---oop-in-indexjs)
 * [manifest.json](#manifestjson)
 
+# 一图胜千言
+Overview of Chrome Extension Components
+
+![chrome-js-demo (1)](https://github.com/szhou12/chrome-extension-practice/assets/35708194/cc8a1001-dc6c-4160-bed0-de5dbc99d3f4)
+
+
 # Folder Structure
 ```
 project-folder/
