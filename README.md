@@ -1,7 +1,8 @@
 # Project Purpose
-The application aims to self-teaching on the development of chrome extension by following online tutorials
+The application aims to self-teaching on the development of chrome extension by following the online tutorials.
 
 # Table of Contents
+* [一图胜千言](#一图胜千言)
 * [Folder Structure](#folder-structure)
 * [Getting Started](#getting-started)
     * [Stage 1 - Set Up Boilerplate](#stage-1---set-up-boilerplate)
